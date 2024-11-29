@@ -1,37 +1,71 @@
-#include<cstdio>
+#include<iostream>
 
 int main(int argv, char* argc)
 {
-	int a = 0;
-	scanf_s("%d", &a);
-	int b = 0;
-	scanf_s("%d", &b);
-	int c = 0;
-	scanf_s("%d", &c);
-	int x = 0;
-	scanf_s("%d", &x);
-	int y = 0;
-	scanf_s("%d", &y);
-	int z = 0;
-	scanf_s("%d", &z);
-	
-	if (a == x && b == y && c == z || a == x && b == z && c == y || a == y && b == z && c == x || a == y && b == x && c == z || a == z && b == y && c == x || a == z && b == x && c == y)
+	int a1 = 0;
+	int b1 = 0;
+	int c1 = 0;	
+	int a2 = 0;
+	int b2 = 0;
+	int c2 = 0;
+
+	scanf_s("%d", &a1);
+	scanf_s("%d", &b1);
+	scanf_s("%d", &c1);
+	scanf_s("%d", &a2);
+	scanf_s("%d", &b2);
+	scanf_s("%d", &c2);
+
+
+	// Сортировка по убыванию:
+	if (a1 < b1)
+	{
+		int a = a1;
+		a1 = b1;
+		b1 = a;
+	}
+	if (a1 < c1)
+	{
+		int a = a1;
+		a1 = c1;
+		c1 = a;
+	}
+	if (b1 < c1)
+	{
+		int a = b1;
+		b1 = c1;
+		c1 = a;
+	}
+
+	if (a2 < b2)
+	{
+		int a = a2;
+		a2 = b2;
+		b2 = a;
+	}
+	if (a2 < c2)
+	{
+		int a = a2;
+		a2 = c2;
+		c2 = a;
+	}
+	if (b2 < c2)
+	{
+		int a = b2;
+		b2 = c2;
+		c2 = a;
+	}
+
+
+	if (a1 == a2 && b1 == b2 && c1 == c2)
 	{
 		printf("Boxes are equal");
 	}
-	else if (a > x && b == y && c == z || a > x && b == z && c == y || a == y && b > z && c == x || a == y && b > x && c == z || a == z && b == y && c > x || a == z && b == x && c > y)
+	else if (a1 >= a2 && b1 >= b2 && c1 >= c2)
 	{
 		printf("The first box is larger than the second one");
 	}
-	else if (a > x && b > y && c > z || a > x && b > y && c == z || a > x && b == y && c > z || a == x && b > y && c > z)
-	{
-		printf("The first box is larger than the second one");
-	}
-	else if (a < x && b == y && c == z || a < x && b == z && c == y || a == y && b < z && c == x || a == y && b < x && c == z || a == z && b == y && c < x || a == z && b == x && c < y)
-	{
-		printf("The first box is smaller than the second one");
-	}
-	else if (a < x && b < y && c < z || a < x && b < y && c == z || a < x && b == y && c < z || a == x && b < y && c < z)
+	else if (a1 <= a2 && b1 <= b2 && c1 <= c2)
 	{
 		printf("The first box is smaller than the second one");
 	}
