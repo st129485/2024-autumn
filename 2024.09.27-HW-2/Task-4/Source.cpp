@@ -17,7 +17,7 @@ int main(int argv, char* argc)
 	scanf_s("%d", &c2);
 
 
-	// Сортировка по убыванию:
+	// descending sort:
 	if (a1 < b1)
 	{
 		int a = a1;
